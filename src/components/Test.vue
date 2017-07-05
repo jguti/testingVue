@@ -3,6 +3,8 @@
   <div>
     <!--<topbar v-bind:prop1="prt"></topbar>-->
 
+    <input v-model="prt" placeholder="">
+    <!--<span>{{prt}}</span>-->
     <card :prot="prt"></card>
 
     <!--<input v-model="modelo" placeholder="edit me">-->
@@ -25,6 +27,8 @@
 <script>
   import topbar from '@/components/topbar'
   import card from '@/components/card'
+
+//  console.log(this.eventHub)
 
   export default {
     name: 'Test',
