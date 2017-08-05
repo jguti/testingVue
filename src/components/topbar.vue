@@ -10,18 +10,18 @@
 <script>
   import eventHub from '../events/hub.js'
 
-  let dataFromCard
+  let aux
 
   eventHub.$on('update', function (data) {
-    console.log(data)
-    dataFromCard = data
+    console.log('dfdsf', data)
+    aux = data
   })
 
   export default {
     name: 'topbar',
     data () {
       return {
-        dataFromCard: dataFromCard
+        dataFromCard: aux
       }
     }
   }

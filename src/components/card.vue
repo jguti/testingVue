@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input v-model="dataToTopbar" placeholder="">
+    <input v-bind="dataToTopbar" placeholder="">
     <!--<span>{{prot}}</span>-->
   </div>
 
@@ -10,19 +10,20 @@
 <script>
   import eventHub from '../events/hub.js'
 
-//  let dataToTopbar = 'init'
+//  it works:
+//  let dataToTopbar = 'initttttt'
 //  eventHub.$emit('update', dataToTopbar)
 
   export default {
     name: 'card',
     props: ['prot'],
-//    data () {
-//      return {
-//        dataToTopbar: 'init'
-//      }
+//    data: {
+//      dataToTopbar: 'init'
 //    },
     computed: {
       dataToTopbar: function () {
+        console.log('computed')
+        console.log(this)
         return eventHub.$emit('update', this)
       }
     }

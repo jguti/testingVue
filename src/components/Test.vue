@@ -30,8 +30,6 @@
   import topbar from '@/components/topbar'
   import card from '@/components/card'
 
-//  console.log(this.eventHub)
-
   export default {
     name: 'Test',
     components: {
