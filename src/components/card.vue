@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input v-bind="dataToTopbar" placeholder="">
+    <input v-model="dataToTopbar" placeholder="">
     <!--<span>{{prot}}</span>-->
   </div>
 
@@ -17,14 +17,15 @@
   export default {
     name: 'card',
     props: ['prot'],
-//    data: {
-//      dataToTopbar: 'init'
-//    },
-    computed: {
+    data () {
+      return {
+        dataToTopbar: 'init'
+      }
+    },
+    watch: {
       dataToTopbar: function () {
         console.log('computed')
-        console.log(this)
-        return eventHub.$emit('update', this)
+        return eventHub.$emit('update', this.dataToTopbar)
       }
     }
   }
