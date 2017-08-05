@@ -1,16 +1,29 @@
 <template>
-  <span>hii</span>
+  <div>
+    <span>{{dataFromCard}}</span>
+    <br>
+  </div>
 
 </template>
 
 
 <script>
-//  this.eventHub.$on('update', function (data) {
-//    console.log(data)
-//  })
+  import eventHub from '../events/hub.js'
+
+  let dataFromCard
+
+  eventHub.$on('update', function (data) {
+    console.log(data)
+    dataFromCard = data
+  })
 
   export default {
-    name: 'topbar'
+    name: 'topbar',
+    data () {
+      return {
+        dataFromCard: dataFromCard
+      }
+    }
   }
 
 </script>

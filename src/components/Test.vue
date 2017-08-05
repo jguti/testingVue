@@ -1,10 +1,12 @@
 <template>
 
   <div>
-    <!--<topbar v-bind:prop1="prt"></topbar>-->
+    <topbar></topbar>
 
-    <input v-model="prt" placeholder="">
+    <!--<input v-model="prt" placeholder="">-->
+
     <!--<span>{{prt}}</span>-->
+
     <card :prot="prt"></card>
 
     <!--<input v-model="modelo" placeholder="edit me">-->

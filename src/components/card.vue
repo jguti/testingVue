@@ -1,19 +1,31 @@
 <template>
   <div>
-    <!--<input v-model="prot" placeholder="">-->
-    <span>{{prot}}</span>
+    <input v-model="dataToTopbar" placeholder="">
+    <!--<span>{{prot}}</span>-->
   </div>
 
 </template>
 
 
 <script>
-//  const data = {info: 99}
-//  this.eventHub.$emit('update', data)
+  import eventHub from '../events/hub.js'
+
+//  let dataToTopbar = 'init'
+//  eventHub.$emit('update', dataToTopbar)
 
   export default {
     name: 'card',
-    props: ['prot']
+    props: ['prot'],
+//    data () {
+//      return {
+//        dataToTopbar: 'init'
+//      }
+//    },
+    computed: {
+      dataToTopbar: function () {
+        return eventHub.$emit('update', this)
+      }
+    }
   }
 
 </script>
